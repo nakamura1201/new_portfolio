@@ -1,0 +1,6 @@
+{
+  "proxy": "localhost:8000",
+  "files": "**/*",
+  "port": 3000,
+  "open": true
+}

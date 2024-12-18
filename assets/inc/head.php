@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- og -->
+<meta name="description" content="<?php echo "$description" ?>" />
+<meta property="og:title" content="<?php echo "$title" ?>" />
+<meta property="og:description" content="<?php echo "$description" ?>" />
+<meta property="og:image" content="https://mywebsite.com/image.jpg">
+<meta property="og:image:alt" content="画像の説明文">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="<?php echo "$ogType" ?>" />
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI'] ?>" />
+
+<!-- css -->
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- JavaScript -->
+
+<!-- フォント -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:wght@100;400;700&family=Rammetto+One&display=swap" rel="stylesheet">
+
+<!-- ファビコン -->
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">

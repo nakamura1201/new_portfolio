@@ -1,0 +1,212 @@
+/// /* -------------------------------------------------------------
+//  フォントrem変換
+// ------------------------------------------------------------*/
+$root-font-size: 16;
+@mixin font-rem($font-size-px) {
+  $root-font-size: 16;
+  font-size: calc($font-size-px / $root-font-size * 1rem);
+}
+
+/// /* -------------------------------------------------------------
+//  フォントrem変換 - レスポンシブ対応
+// ------------------------------------------------------------*/
+@mixin font-rem-xl($font-size-px) {
+  $root-font-size: 16;
+  font-size: calc(($font-size-px / 1.2) / $root-font-size * 1rem);
+}
+
+@mixin font-rem-md($font-size-px) {
+  $root-font-size: 16;
+  font-size: calc(($font-size-px / 1.3125) / $root-font-size * 1rem);
+}
+
+@mixin font-rem-sm($font-size-px) {
+  $root-font-size: 16;
+  font-size: calc(($font-size-px / 1.5) / $root-font-size * 1rem);
+}
+
+/// /* -------------------------------------------------------------
+//  フォントclamp変換
+// ------------------------------------------------------------*/
+@mixin font-clamp($minValue, $recommendation, $maxValue) {
+  font-size: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
+}
+
+/// /* -------------------------------------------------------------
+//  画像100％表示
+// ------------------------------------------------------------*/
+@mixin image-max {
+  vertical-align: middle;
+  width: 100%;
+  height: auto;
+}
+
+/// /* -------------------------------------------------------------
+//  line-height指定
+// ------------------------------------------------------------*/
+@mixin line-height($px, $height) {
+  line-height: calc($height / $px);
+}
+
+/// /* -------------------------------------------------------------
+//  letter-spacing指定
+// ------------------------------------------------------------*/
+@mixin letter-spacing($spacing) {
+  letter-spacing: ($spacing / 1000) + em;
+}
+
+/// /* -------------------------------------------------------------
+//  フォント指定
+// ------------------------------------------------------------*/
+@mixin YuGoBold {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+    sans-serif;
+  font-weight: 700;
+}
+@mixin Montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+@mixin Rammetto {
+  font-family: "Rammetto One", sans-serif;
+}
+
+@mixin MontserratBold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+@mixin notoBold {
+  font-family: "Noto Sans JP";
+  font-weight: 700;
+}
+@mixin Antonio {
+  // font-family:"Humane-Regular";
+  font-family: "Antonio";
+}
+@mixin AntonioBold {
+  // font-family:"Humane-bold";
+  font-family: "Antonio";
+  font-weight: 700;
+}
+@mixin ZenKakuGothicNew {
+  font-family: "Zen Kaku Gothic New";
+}
+@mixin ZenKakuGothicNewBold {
+  font-family: "Zen Kaku Gothic New";
+  font-weight: 700;
+}
+// @font-face {
+//   font-family:"Humane-bold";
+//   src: url(/assets/fonts/Humane-Bold.woff2) format("woff2");
+// }
+// @font-face {
+//   font-family:"Humane-ExtraLight";
+//   src: url(/assets/fonts/Humane-ExtraLight.woff2) format("woff2");
+// }
+
+// @font-face {
+//   font-family:"Humane-Light";
+//   src: url(/assets/fonts/Humane-Light.woff2) format("woff2");
+// }
+
+// @font-face {
+//   font-family:"Humane-Medium";
+//   src: url(/assets/fonts/Humane-Medium.woff2) format("woff2");
+// }
+
+// @font-face {
+//   font-family:"Humane-Regular";
+//   src: url(/assets/fonts/Humane-Regular.woff2) format("woff2");
+// }
+
+// @font-face {
+//   font-family:"Humane-SemiBold";
+//   src: url(/assets/fonts/Humane-SemiBold.woff2) format("woff2");
+// }
+
+// @font-face {
+//   font-family:"Humane-Thin";
+//   src: url(/assets/fonts/Humane-Thin.woff2) format("woff2");
+// }
+
+/// /* -------------------------------------------------------------
+//  トランジション
+// ------------------------------------------------------------*/
+@mixin mainTransition {
+  transition: 0.3s;
+}
+
+/// /* -------------------------------------------------------------
+//  色変数
+// ------------------------------------------------------------*/
+$basicTextColor: #2d2d2d;
+$redColor: #ff6a6a;
+$lightBlueColor: #A5B3E3;
+$yellowColor: #dfe862;
+$greenColor: #63BE72;
+$purpleColor: #994798;
+$orangeColor: #FC924E;
+
+/// /* -------------------------------------------------------------
+//  余白レスポンシブ制御
+// ------------------------------------------------------------*/
+/// 設定例
+/// margin-top: clamp(30px, calc((60vw / 1920 * 100)), 60px);
+@mixin mtMaxAndMin($minValue, $recommendation, $maxValue) {
+  margin-top: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
+}
+@mixin mbMaxAndMin($minValue, $recommendation, $maxValue) {
+  margin-bottom: clamp(
+    $minValue,
+    calc(($recommendation / 1920 * 100)),
+    $maxValue
+  );
+}
+@mixin mlMaxAndMin($minValue, $recommendation, $maxValue) {
+  margin-left: clamp(
+    $minValue,
+    calc(($recommendation / 1920 * 100)),
+    $maxValue
+  );
+}
+
+@mixin mrMaxAndMin($minValue, $recommendation, $maxValue) {
+  margin-right: clamp(
+    $minValue,
+    calc(($recommendation / 1920 * 100)),
+    $maxValue
+  );
+}
+
+@mixin ptMaxAndMin($minValue, $recommendation, $maxValue) {
+  padding-top: clamp(
+    $minValue,
+    calc(($recommendation / 1920 * 100)),
+    $maxValue
+  );
+}
+
+@mixin pbMaxAndMin($minValue, $recommendation, $maxValue) {
+  padding-bottom: clamp(
+    $minValue,
+    calc(($recommendation / 1920 * 100)),
+    $maxValue
+  );
+}
+
+@mixin plMaxAndMin($minValue, $recommendation, $maxValue) {
+  padding-left: clamp(
+    $minValue,
+    calc(($recommendation / 1920 * 100)),
+    $maxValue
+  );
+}
+
+@mixin prMaxAndMin($minValue, $recommendation, $maxValue) {
+  padding-right: clamp(
+    $minValue,
+    calc(($recommendation / 1920 * 100)),
+    $maxValue
+  );
+}

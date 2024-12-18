@@ -1,0 +1,23 @@
+AuthType Basic
+AuthName "Input your ID and Password."
+AuthUserFile /usr/home/ae1011otrv/html/.htpasswd
+require valid-user
+
+
+# HTTP を HTTPS にリダイレクト
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# prart.co.jp から www.prart.co.jp へリダイレクト
+RewriteCond %{HTTP_HOST} ^prart\.co\.jp [NC]
+RewriteRule ^(.*)$ https://www.prart.co.jp/$1 [R=301,L]
+
+# トップページの /index.php を / にリダイレクト
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/index\.php [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+
+# サブディレクトリ内の /index.php をディレクトリルートにリダイレクト
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*/)?index\.php [NC]
+RewriteRule ^(.*)/index\.php$ /$1/ [R=301,L]
+
+ErrorDocument 404 /404/index.php

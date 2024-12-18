@@ -1,0 +1,113 @@
+@use "../global/index" as g;
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+button {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+}
+ul,
+ol {
+  list-style-type: none;
+}
+em,
+i,
+strong,
+th,
+address {
+  font-style: normal;
+  /*text-align: left;*/
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+img,
+object,
+embed {
+  border: 0;
+  vertical-align: top;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: #cccccc;
+  margin: 1em 0;
+  clear: both;
+  width: 100%;
+}
+li {
+  list-style-type: none;
+}
+area {
+  outline: none !important;
+  border: none !important;
+}
+body *,
+body *::after,
+body *::before {
+  box-sizing: border-box;
+}
+input[type="submit"],
+input[type="button"],
+input[type="text"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  border: none;
+}
+input[type="submit"]:focus,
+input[type="button"]:focus {
+  outline: 0;
+}
+a {
+  text-decoration: none;
+}
+html {
+  color: g.$basicTextColor;
+  // scroll-behavior: smooth;
+  line-height: 1.8;
+  color:g.$basicTextColor;
+}
+body {
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-weight: 400;
+}

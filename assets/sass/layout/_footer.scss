@@ -1,0 +1,25 @@
+@use "../global/index" as g;
+
+footer{
+    background: #222222;
+}
+
+.l-footer{
+    height: 510px;
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__text01{
+        color: #DFE862;
+        @include g.font-rem(60);
+        @include g.Rammetto;
+    }
+    &__text02{
+        color: #FF6A6A;
+        @include g.font-rem(100);
+        @include g.Rammetto;
+    }
+}

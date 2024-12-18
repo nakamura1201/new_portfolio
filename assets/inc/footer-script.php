@@ -1,0 +1,2 @@
+<!-- JavaScript -->
+<script src="/assets/js/common.js"></script>

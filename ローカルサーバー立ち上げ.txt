@@ -1,0 +1,31 @@
+Node.jsをインストール	
+"BrowserSyncをインストール
+"	
+"上記の二つはどこにインストールするのか？プロジェクト単位？グローバルで？
+プロジェクト単位ならdocker経由でインストール、ただよく使う物なのでグローバルでよい"	
+	
+"動的ファイルを監視する場合はPHPなどのローカルサーバー必要
+PHPのインストール"	
+	
+ローカルサーバー立ち上げ例	
+PHP：D:\project\prart>php -S localhost:8000	
+"browser-sync：browser-sync start --proxy ""localhost:8000"" --files ""**/*""
+"	
+"browser-sync startまでは定型、オプションでproxyサーバーの指定（PHPローカルサーバー）filesで監視対象を指定
+ルートディレクトリで実行してすべてのファイルを監視する"	
+	
+jsonで設定を保存して、batファイルで一発立ち上げ	
+	
+json設定	
+"{
+    ""proxy"": ""localhost:8000"",
+    ""files"": ""/prart/**/*"",
+    ""port"": 3000,
+    ""open"": true
+  }
+  "	
+batファイル	
+@echo off	
+cd /d D:\project\prart	
+start cmd /k php -S localhost:8000	
+start cmd /k php -S localhost:8001	
