@@ -1,20 +1,20 @@
-■ローカルサーバー立ち上げ
+#ローカルサーバー立ち上げ
 PHP：D:\project\prart>php -S localhost:8000
 
 browser-sync：browser-sync start --proxy "localhost:8000" --files "**/*"
 
 
-■アニメーションの設定
+#アニメーションの設定
 
 デフォルトhoverアニメーション
 transition: 0.3s;
 
 
-■z-indexの設定
+#z-indexの設定
 ヘッダーロゴ・・・999
 ハンバーガーボタン・・・9999
 
-■ブレイクポイント 
+#ブレイクポイント 
   "xs": 320px,
   "sm": 480px,フォントサイズ1.5
   "mmd": 600px,
@@ -24,12 +24,12 @@ transition: 0.3s;
   "xxl": 1500px,
   "xxxl": 1921px,
 
-■imgの属性
+#imgの属性
 width="681" height="450" loading="lazy" alt=""
 
 
 
-■カラーコード　不透明度
+#カラーコード　不透明度
 100%	99%	98%	97%	96%	95%	94%	93%	92%	91%
 FF	FC	FA	F7	F5	F2	F0	ED	EB	E8
 90%	89%	88%	87%	86%	85%	84%	83%	82%	81%
@@ -53,11 +53,11 @@ B3	B0	AD	AB	A8	A6	A3	A1	9E	9C
 0%									
 00	
 
-■ベーシック
+#ベーシック
 未設定
 
 
-■コミットルール
+#コミットルール
 ①Prefix
 feat: 新しい機能
 fix: バグの修正
@@ -71,4 +71,130 @@ chore: ビルド、補助ツール、ライブラリ関連
 ②どの個所をどのような理由で変更したのかなど詳しく記入する
 
 
-■その他メモ
+#CSSメモ
+##現在の幅から1920px分引いて左右に移動させる
+calc((100vw - 1920px) / 2 + 70px)
+
+
+##コンテナクエリ
+###レスポンシブ対応したい要素の祖先要素をコンテナクエリ化
+container-type: ○○;
+container-type: inline-size;: インライン方向のサイズに応じる
+container-type: size;: インライン方向・ブロック方向のサイズに応じる
+
+###クエリを書く
+@container (min-width: 300px) {
+  子要素 {
+    color: #f4481a;
+    font-size: 26px;
+    font-weight: bold;
+  }
+}
+
+##カスケードレイヤー@layer
+名前付きレイヤーを作成し、その中にcssの記述を行うと詳細度の影響を受けずにスタイリングできる
+@layer components {
+  #button {
+    background-color: blue;
+    color: white;
+  }
+}
+ 
+@layer utilities {
+  .bg-red {
+    background-color: red;
+    color: white;
+  }
+}
+
+スタイルを割り当てずに、名前付きレイヤーだけで宣言することも可能
+@layer reset, components, utilities;
+
+importで読み込んで利用することも可能
+@import "bootstrap.css" layer(framework);
+
+
+カスケードレイヤーの注意点
+インラインスタイルや !important よりも低い優先度を持ちます。
+
+
+
+#構造化マークアップ
+TOPページ	
+<script type="application/ld+json">	
+{	
+@context: "https://schema.org",	
+@type: "Corporation",	
+name: "株式会社プラルト",	
+address: {	
+@type: "PostalAddress",	
+postalCode: "3990033",	
+addressRegion: "長野県",	
+addressLocality: "松本市",	
+streetAddress: "笹賀5985"	
+},	
+telephone: "+8163288000",	
+URL: "https://www.prart.co.jp/"	
+}	
+</script>	
+	
+<script type="application/ld+json">	
+{	
+@context: "https://schema.org",	
+@type: "WebSite",	
+name: "株式会社プラルト",	
+description: "株式会社プラルトは、長野県松本市に拠点を置き、デザイン、広告、印刷・出版、マーケティングなどのサービスを提供している企業です。地域に根ざしたビジネス展開とお客様のニーズに応える為の最新の技術を駆使した高品質なソリューションを提供しています。あなたのビジネスを次のレベルに引き上げるためのパートナーとして、プラルトにお任せください。",	
+url: "https://www.prart.co.jp/",	
+image: {	
+@type: "ImageObject",	
+url: "https://www.prart.co.jp/assets/image/blog/default.jpg"	
+},	
+publisher: {	
+@type: "Organization",	
+name: "株式会社プラルト",	
+logo: {	
+@type: "ImageObject",	
+url: "https://www.prart.co.jp/assets/image/common/c-logo.svg"	
+}	
+},	
+mainEntityOfPage: {	
+@type: "WebPage",	
+@id: "https://www.prart.co.jp/",	
+name: "株式会社プラルトのトップページ",	
+description: "株式会社プラルトの公式トップページです。最新の情報やサービス内容についてはこちらをご覧ください。",	
+url: "https://www.prart.co.jp/"	
+},	
+potentialAction: {	
+@type: "SearchAction",	
+target: "https://www.prart.co.jp/search?q={search_term_string}",	
+query-input: "required name=search_term_string"	
+}	
+}	
+</script>	
+	
+	
+下層ページ	
+<script type="application/ld+json">	
+{	
+@context: "https://schema.org",	
+@type: "BreadcrumbList",	
+description: "株式会社プラルトは、企業の成長を加速させるための包括的なマーケティングサービスを提供しています。私たちのマーケティング提案は、データに基づいた計画とクリエイティブ要素を合わせ、ターゲットの訴求を促します。",	
+itemListElement: [{	
+@type: "ListItem",	
+position: 1,	
+name: "TOP",	
+item: "https://www.prart.co.jp/"	
+},	
+{	
+@type: "ListItem",	
+position: 2,	
+name: "MARKETING",	
+item: "https://www.prart.co.jp/marketing/"	
+}	
+]	
+}	
+</script>	
+
+#その他メモ
+vueアニメーション
+https://b-risk.jp/blog/2019/12/nuxt-js/
