@@ -198,3 +198,8 @@ item: "https://www.prart.co.jp/marketing/"
 #その他メモ
 vueアニメーション
 https://b-risk.jp/blog/2019/12/nuxt-js/
+
+CSSのみでMPAでもSPAっぽく画面遷移できる
+@view-transition {
+  navigation: auto;
+}
