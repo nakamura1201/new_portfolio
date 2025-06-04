@@ -287,3 +287,26 @@ import で利用：
 ```
 
 - MT で変数を呼び出す場合： `$変数` または `name` 指定
+
+# npm パッケージ一覧（Vite + 画像圧縮）
+
+| 種別         | パッケージ名        | 用途説明                                             |
+| ------------ | ------------------- | ---------------------------------------------------- |
+| **開発環境** | `vite`              | JS/CSS のビルド、HMR などを行うモダンビルドツール    |
+|              | `sass`              | SCSS ファイルを CSS に変換するプリプロセッサ         |
+| **画像圧縮** | `imagemin`          | 各種画像圧縮プラグインの共通基盤                     |
+|              | `imagemin-webp`     | `.jpg/.png → .webp` に変換する                       |
+|              | `imagemin-mozjpeg`  | JPEG 形式の圧縮を行う（品質指定も可）                |
+|              | `imagemin-pngquant` | PNG 画像の圧縮を行う                                 |
+|              | `glob`              | ファイルの再帰的検索（ディレクトリ階層の維持に使用） |
+
+## npm 一括
+
+```
+npm install -D vite sass imagemin imagemin-webp imagemin-mozjpeg imagemin-pngquant glob
+
+npm run dev
+npm run build
+npm run watch
+npm run img
+```

@@ -72,6 +72,18 @@ npm install -D vite sass
 
 ```
 
+### 6. sass と js のミニファイ
+
+entry.js を作成
+
+```
+// assets/js/entry.js
+import "../sass/style.scss";
+import "./common.js";
+
+
+```
+
 🚀 Vite でできること一覧
 カテゴリ 機能 内容・利点
 💡 開発効率 HMR（Hot Module Replacement） JS/CSS の変更を保存と同時に反映。リロード不要で即時確認
