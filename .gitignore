@@ -1,0 +1,7 @@
+# ルートに .gitignore を作成して以下を記述
+node_modules/
+dist/
+.env
+.DS_Store
+.vscode/
+*.log
