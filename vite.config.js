@@ -9,7 +9,7 @@ export default defineConfig({
       input: path.resolve(__dirname, "assets/js/entry.js"),
       output: {
         assetFileNames: "style.css", // CSSファイル名
-        entryFileNames: "common.min.js", // JSファイル名（ここで変えられる）
+        entryFileNames: "common.js", // JSファイル名（ここで変えられる）
       },
     },
     minify: "esbuild", // デフォルトでJSミニファイON（Terserも選べる）

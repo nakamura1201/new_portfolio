@@ -1,7 +1,7 @@
-AuthType Basic
-AuthName "Input your ID and Password."
-AuthUserFile /usr/home/ae1011otrv/html/.htpasswd
-require valid-user
+#AuthType Basic
+#AuthName "Input your ID and Password."
+#AuthUserFile /usr/home/ae1011otrv/html/.htpasswd
+#require valid-user
 
 
 # HTTP を HTTPS にリダイレクト

@@ -1,6 +1,6 @@
 {
-  "proxy": "localhost:8000",
-  "files": "**/*",
+  "proxy": "php:80",
+  "files": ["./**/*.php", "./assets/**/*.*", "./dist/**/*.*"],
   "port": 3000,
-  "open": true
+  "open": false
 }

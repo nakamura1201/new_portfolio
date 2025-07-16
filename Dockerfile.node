@@ -1,0 +1,17 @@
+# Dockerfile.node
+FROM node:20
+
+WORKDIR /app
+
+ENV CHOKIDAR_USEPOLLING=true
+
+# パッケージを先にコピーしてインストール
+COPY ./package*.json ./
+RUN npm install
+
+# ソース一式をコピー
+COPY . .
+
+# BrowserSync 起動（PHP を proxy）
+CMD ["npx", "browser-sync", "start", "--config", "bs-config.json"]
+
