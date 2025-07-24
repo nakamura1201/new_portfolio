@@ -18,7 +18,7 @@
     <section class="c-section">
       <div class="c-content">
         <div class="c-content__inner">
-          ssssasadasdasdfsfssdsfdadadsfsfssdfsff
+
         </div>
       </div>
     </section>
