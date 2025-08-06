@@ -8,8 +8,13 @@ export default defineConfig({
     rollupOptions: {
       input: path.resolve(__dirname, "assets/js/entry.js"),
       output: {
-        assetFileNames: "style.css", // CSSファイル名
-        entryFileNames: "common.js", // JSファイル名（ここで変えられる）
+        assetFileNames: (assetInfo) => {
+          // CSS だけ固定
+          if (assetInfo.name?.endsWith(".css")) return "style.css";
+          // 画像・フォントは元の名前と拡張子を保つ
+          return "img/[name][extname]"; // 例）img/sample.webp
+        },
+        entryFileNames: "common.js",
       },
     },
     minify: "esbuild", // デフォルトでJSミニファイON（Terserも選べる）
