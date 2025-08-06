@@ -1,23 +1,7 @@
 @use "../../global/index" as g;
 
 .c-section{
-    &--yellow{
-        background: g.$yellowColor;
-    }
-    &--purple{
-        background: g.$purpleColor;
-    }
-    &--green{
-        background: g.$greenColor;
-    }
-    &--orange{
-        background: g.$orangeColor;
-    }
-    &--moviesgao{
-        background-position: top;
-        background-image: url(/assets/img/home/moviesgao.png);
-        background-repeat: no-repeat;
-    }
+
 }
 
 .c-content{
