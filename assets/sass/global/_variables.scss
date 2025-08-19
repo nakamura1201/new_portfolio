@@ -1,3 +1,4 @@
+@use "sass:map";
 /* -------------------------------------------------------------
 //  メディアクエリ
 // ------------------------------------------------------------*/
@@ -13,7 +14,7 @@ $mq-breakpoints: (
   "xxxl": 1921px,
 ) !default;
 @mixin mq($breakpoint: md, $rule: min) {
-  $breakpoint: map-get($mq-breakpoints, $breakpoint);
+  $breakpoint: map.get($mq-breakpoints, $breakpoint);
   @if $rule == max {
     $breakpoint: $breakpoint - 1px;
   }
