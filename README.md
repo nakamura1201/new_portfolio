@@ -310,3 +310,8 @@ npm run build
 npm run watch
 npm run img
 ```
+
+参加する場合
+node.js インストール
+npm install で環境設定
+docker で立ち上げる
