@@ -15,11 +15,8 @@
   <main class="c-main">
 
 
-    <section class="c-section">
-      <div class="c-content">
-        <div class="c-content__inner">
-
-        </div>
+    <section class="c-content">
+      <div class="c-content__inner">
       </div>
     </section>
 
