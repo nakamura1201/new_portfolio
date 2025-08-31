@@ -1,5 +1,87 @@
 @use "../global/index" as g;
 
-.l-header {
-  position: fixed;
+.l-header-variations01{
+  margin-top:100px; // 統一: 02 に合わせる
+  .l-header{
+    padding: 30px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+  .l-header__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .l-header__link{
+    display: flex;
+    gap: 30px;
+  }
+  .l-header-nav__list{
+    display: flex;
+    gap: 15px;
+  }
 }
+
+.l-header-variations02{
+  margin-top:100px;
+  .l-header{
+    padding: 30px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+  .l-header__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .l-header-nav__list{
+    display: flex;
+    gap: 15px;
+  }
+}
+
+.l-header-variations03 {
+  margin-top:100px;
+  .l-header { display:flex; padding:30px; color: var(--text-color); background-color: var(--background-color); }
+  .l-header__inner { display:flex; align-items:center; width:100%; }
+  .l-header__block--left,
+  .l-header__block--right { flex:0 0 auto; }
+  .l-header-nav--center { flex:1 1 auto; }
+  .l-header-nav__list { display:flex; gap:24px; }
+  .l-header-toggle { display:none; background:none; border:0; }
+  @media (max-width: 860px) {
+    .l-header-nav--center { position:absolute; top:100%; left:0; right:0; display:none; }
+    .l-header-nav--center.is-open { display:block; }
+    .l-header-toggle { display:inline-flex; flex-direction:column; gap:4px; }
+    .l-header-nav__list { flex-direction:column; padding:16px; }
+  }
+}
+
+// バリエーション04: メガメニュー
+.l-header-variations04 {
+  margin-top:100px;
+  .l-header { padding:30px; background-color: var(--background-color); color: var(--text-color); position:relative; }
+  .l-header__inner { display:flex; align-items:center; justify-content:space-between; }
+  .l-header-nav__list { display:flex; gap:24px; }
+  .l-header-nav__list-item { position:relative; }
+  .l-header-mega-trigger[aria-expanded="true"] + .l-header-mega { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; transition-delay:0s; }
+  .l-header-mega-trigger { background:none; border:0; cursor:pointer; font:inherit; color:inherit; display:flex; align-items:center; gap:4px; }
+  .l-header-mega { position:absolute; left:0; top:100%; width:720px; max-width:calc(100vw - 40px); background:#fff; box-shadow:0 4px 16px rgba(0,0,0,.12); padding:32px; gap:40px; z-index:50; display:flex; opacity:0; visibility:hidden; transform:translateY(8px); pointer-events:none; transition:opacity .28s ease, transform .28s ease, visibility 0s linear .28s; }
+  @media (prefers-reduced-motion: reduce){
+    .l-header-mega { transition:none; transform:none; }
+  }
+  .l-header-mega__col { flex:1 1 0; min-width:0; }
+  .l-header-mega__title { font-weight:600; margin:0 0 12px; font-size:14px; letter-spacing:.05em; }
+  .l-header-mega__links { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+  .l-header-mega__links a { text-decoration:none; color:inherit; font-size:14px; }
+  .l-header-mega__links a:focus-visible, .l-header-mega__links a:hover { text-decoration:underline; }
+  // 閉じるボタン（モバイル想定）
+  .l-header-mega__close { display:none; }
+  @media (max-width: 860px){
+    .l-header-nav__list { flex-direction:column; }
+    .l-header-mega { position:static; width:auto; max-width:none; box-shadow:none; padding:16px 0 0; flex-direction:column; gap:24px; transform:translateY(0); }
+    .l-header-mega-trigger[aria-expanded="true"] + .l-header-mega { opacity:1; visibility:visible; pointer-events:auto; }
+    .l-header-mega__close { display:inline-block; background:none; border:1px solid #ccc; padding:4px 10px; font-size:12px; margin-top:12px; }
+  }
+}
+
