@@ -11,17 +11,13 @@
 </head>
 
 <body>
-  <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/header.php'); ?>
-  <main class="c-main">
-
-
-    <section class="c-content">
-      <div class="c-content__inner">
+  <div class="c-snippets-content">
+    <div class="c-snippets-content__inner">
+      <div class="c-common-variations01">
+        <a href="" class="c-common-btn">お問い合わせ</a>
       </div>
-    </section>
-
-
-  </main>
+    </div>
+  </div>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/footer.php'); ?>
 
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/footer-script.php'); ?>

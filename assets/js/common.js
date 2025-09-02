@@ -105,77 +105,77 @@
 //   $(".sp-nav").toggleClass("open");
 // });
 
-/* -------------------------------------------------------------
-//  TOP強みの横スクロール - GSAP
-// ------------------------------------------------------------*/
-const listWrapperEl = document.querySelector(".p-home-sideScroll");
-const listEl = document.querySelector(".p-home-sideScroll__container");
+// /* -------------------------------------------------------------
+// //  TOP強みの横スクロール - GSAP
+// // ------------------------------------------------------------*/
+// const listWrapperEl = document.querySelector(".p-home-sideScroll");
+// const listEl = document.querySelector(".p-home-sideScroll__container");
 
-gsap.to(listEl, {
-  x: () =>
-    -(listEl.clientWidth - listWrapperEl.clientWidth) +
-    window.innerWidth * 0.025, // 10% of viewport width
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".p-home__bg",
-    start: "top top", // 要素の上端（top）が、ビューポートの上端（top）にきた時
-    end: () =>
-      `+=${
-        listEl.clientWidth -
-        listWrapperEl.clientWidth +
-        window.innerWidth * 0.025
-      }`, // 10% of viewport width
-    scrub: true,
-    pin: true,
-    anticipatePin: 1,
-    invalidateOnRefresh: true,
-  },
-});
+// gsap.to(listEl, {
+//   x: () =>
+//     -(listEl.clientWidth - listWrapperEl.clientWidth) +
+//     window.innerWidth * 0.025, // 10% of viewport width
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: ".p-home__bg",
+//     start: "top top", // 要素の上端（top）が、ビューポートの上端（top）にきた時
+//     end: () =>
+//       `+=${
+//         listEl.clientWidth -
+//         listWrapperEl.clientWidth +
+//         window.innerWidth * 0.025
+//       }`, // 10% of viewport width
+//     scrub: true,
+//     pin: true,
+//     anticipatePin: 1,
+//     invalidateOnRefresh: true,
+//   },
+// });
 
-/* -------------------------------------------------------------
-//  TOP強みの横スクロールの背景画像切り替え - GSAP
-// ------------------------------------------------------------*/
-const sideScrollSec = document.querySelector(".p-home-sideScroll__inner--sce");
-const sideScrollTri = document.querySelector(".p-home-sideScroll__inner--tri");
+// /* -------------------------------------------------------------
+// //  TOP強みの横スクロールの背景画像切り替え - GSAP
+// // ------------------------------------------------------------*/
+// const sideScrollSec = document.querySelector(".p-home-sideScroll__inner--sce");
+// const sideScrollTri = document.querySelector(".p-home-sideScroll__inner--tri");
 
-// p-home-sideScroll__inner--sce に達したら .p-home__bg に -img02 クラスを付与
-ScrollTrigger.create({
-  trigger: ".p-home-sideScroll__inner--sce",
-  start: "top top",
-  end: () => `+=${sideScrollSec.clientWidth}`,
-  toggleClass: { targets: ".p-home__bgImage", className: "-img02" },
-  markers: true,
-});
+// // p-home-sideScroll__inner--sce に達したら .p-home__bg に -img02 クラスを付与
+// ScrollTrigger.create({
+//   trigger: ".p-home-sideScroll__inner--sce",
+//   start: "top top",
+//   end: () => `+=${sideScrollSec.clientWidth}`,
+//   toggleClass: { targets: ".p-home__bgImage", className: "-img02" },
+//   markers: true,
+// });
 
-// p-home-sideScroll__inner--tri に達したら .p-home__bg に -img03 クラスを付与
-ScrollTrigger.create({
-  trigger: ".p-home-sideScroll__inner--tri",
-  start: () => `+=${sideScrollTri.clientWidth}`,
-  end: () => `+=${sideScrollTri.clientWidth + sideScrollTri.clientWidth}`,
-  toggleClass: { targets: ".p-home__bgImage", className: "-img03" },
-  markers: true,
-});
+// // p-home-sideScroll__inner--tri に達したら .p-home__bg に -img03 クラスを付与
+// ScrollTrigger.create({
+//   trigger: ".p-home-sideScroll__inner--tri",
+//   start: () => `+=${sideScrollTri.clientWidth}`,
+//   end: () => `+=${sideScrollTri.clientWidth + sideScrollTri.clientWidth}`,
+//   toggleClass: { targets: ".p-home__bgImage", className: "-img03" },
+//   markers: true,
+// });
 
 /* -------------------------------------------------------------
 //  スライダー設定 - splide
 // ------------------------------------------------------------*/
-new Splide("#splide1", {
-  type: "loop",
-  speed: 600,
-  perPage: 4,
-  perMove: 1,
-  gap: 18,
-  focus: "left",
-}).mount();
+// new Splide("#splide1", {
+//   type: "loop",
+//   speed: 600,
+//   perPage: 4,
+//   perMove: 1,
+//   gap: 18,
+//   focus: "left",
+// }).mount();
 
-new Splide("#splide2", {
-  type: "loop",
-  speed: 600,
-  perPage: 3,
-  perMove: 1,
-  gap: 18,
-  focus: "left",
-}).mount();
+// new Splide("#splide2", {
+//   type: "loop",
+//   speed: 600,
+//   perPage: 3,
+//   perMove: 1,
+//   gap: 18,
+//   focus: "left",
+// }).mount();
 
 /* -------------------------------------------------------------
 //  ローディングの設定
@@ -185,3 +185,32 @@ window.onload = function () {
   console.log(spinner);
   spinner.classList.add("-loaded");
 };
+
+/* -------------------------------------------------------------
+//  ヘッダー メガメニュー開閉
+// ------------------------------------------------------------*/
+(function(){
+  const triggers = document.querySelectorAll('.l-header-mega-trigger');
+  if(!triggers.length) return;
+  function closeAll(except){
+    triggers.forEach(t => { if(t !== except){ t.setAttribute('aria-expanded','false'); } });
+  }
+  triggers.forEach(trigger => {
+    const mega = document.getElementById(trigger.getAttribute('aria-controls'));
+    if(!mega) return;
+    trigger.addEventListener('click', () => {
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      closeAll(expanded ? null : trigger);
+      trigger.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+    // フォーカス外れたら閉じる（タブ移動用）
+    mega.addEventListener('keydown', e => {
+      if(e.key === 'Escape') { trigger.setAttribute('aria-expanded','false'); trigger.focus(); }
+    });
+    document.addEventListener('click', e => {
+      if(!mega.contains(e.target) && e.target !== trigger){
+        trigger.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+})();

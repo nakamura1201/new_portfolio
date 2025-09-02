@@ -7,6 +7,9 @@
 // ------------------------------------------------------------*/
 :root {
   --list-wrap-height: 0;
+  --text-color: #222;
+  --background-color: #86af8d;
+  --primary-color: #e9ab65;
 }
 
 body,
@@ -135,10 +138,6 @@ body {
   font-weight: 400;
 }
 
-.l-header {
-  position: fixed;
-}
-
 footer {
   background: #222222;
 }
@@ -148,6 +147,11 @@ footer {
 }
 .c-content__inner {
   width: min(1200px, 100%);
+  margin-inline: auto;
+}
+
+.c-snippets-content {
+  max-width: 1700px;
   margin-inline: auto;
 }
 
