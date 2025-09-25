@@ -1,17 +1,3 @@
-// //1400px以上の場合スマホメニューのactiveクラス削除
-// function resetMobileNav() {
-//   $(".hamburger").removeClass("active");
-//   $(".sp-nav").removeClass("open");
-// }
-
-// $(window).on("load resize", function () {
-//   var winW = $(this).width();
-//   var devW = 1500;
-//   if (winW >= devW) {
-//     resetMobileNav();
-//   }
-// });
-
 // // メガメニュー開閉
 // $(".l-header__mega__wrap").click(function () {
 //   $(this).toggleClass("l-header__mega--active");

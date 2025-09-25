@@ -8,18 +8,29 @@
     "build": "vite build",
     "watch": "vite build --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "img": "node compress-images.mjs"
+    "img": "node compress-images.mjs",
+    "build:js": "esbuild assets/js/entry.esbuild.js --bundle --minify --sourcemap --target=es2018 --outfile=dist/common.js",
+    "build:sass": "sass assets/sass/style.scss assets/css/style.build.css --no-source-map --style=expanded",
+    "build:css": "postcss assets/css/style.build.css -o dist/style.css",
+    "build:static": "npm run build:js && npm run build:sass && npm run build:css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@squoosh/cli": "^0.7.1",
+    "autoprefixer": "^10.4.21",
+    "css-declaration-sorter": "^7.3.0",
+    "cssnano": "^7.1.1",
+    "esbuild": "^0.25.10",
     "glob": "^11.0.3",
     "imagemin": "^9.0.1",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^10.0.0",
     "imagemin-webp": "^8.0.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-sort-media-queries": "^5.2.0",
     "sass": "^1.89.1",
     "vite": "^6.3.5"
   }

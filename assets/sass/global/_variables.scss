@@ -11,7 +11,7 @@ $mq-breakpoints: (
   "lg": 1024px,
   "xl": 1200px,
   "xxl": 1500px,
-  "xxxl": 1921px,
+  "fhd": 1921px,
 ) !default;
 @mixin mq($breakpoint: md, $rule: min) {
   $breakpoint: map.get($mq-breakpoints, $breakpoint);
@@ -50,9 +50,4 @@ $mq-breakpoints: (
 // ------------------------------------------------------------*/
 :root {
   --list-wrap-height: 0;
-  --text-color: #222;
-  --background-color: #86af8d;
-  --primary-color: #e9ab65;
 }
-
-

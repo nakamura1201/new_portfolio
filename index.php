@@ -17,6 +17,7 @@
 
     <section class="c-content">
       <div class="c-content__inner">
+        array_diff_assoc
       </div>
     </section>
 

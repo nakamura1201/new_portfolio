@@ -1,3 +1,5 @@
+@use "sass:math";
+@use "sass:list";
 /// /* -------------------------------------------------------------
 //  フォントrem変換
 // ------------------------------------------------------------*/
@@ -26,10 +28,17 @@ $root-font-size: 16;
 }
 
 /// /* -------------------------------------------------------------
-//  フォントclamp変換
+//  フォントclamp
 // ------------------------------------------------------------*/
 @mixin font-clamp($minValue, $recommendation, $maxValue) {
   font-size: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
+}
+
+/// /* -------------------------------------------------------------
+//  フォントvw変換
+// -------------------------------------------------------------*/
+@mixin font-wide($recommendation) {
+  font-size: calc(($recommendation / 1920 * 100vw));
 }
 
 /// /* -------------------------------------------------------------
@@ -59,8 +68,7 @@ $root-font-size: 16;
 //  フォント指定
 // ------------------------------------------------------------*/
 @mixin YuGoBold {
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
-    sans-serif;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
   font-weight: 700;
 }
 @mixin Montserrat {
@@ -69,6 +77,16 @@ $root-font-size: 16;
 
 @mixin Rammetto {
   font-family: "Rammetto One", sans-serif;
+}
+
+@mixin Jost {
+  font-family: "Jost", sans-serif;
+}
+
+@mixin DelaGothic {
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @mixin MontserratBold {
@@ -91,6 +109,9 @@ $root-font-size: 16;
 }
 @mixin ZenKakuGothicNew {
   font-family: "Zen Kaku Gothic New";
+}
+@mixin Jost {
+  font-family: "Jost";
 }
 @mixin ZenKakuGothicNewBold {
   font-family: "Zen Kaku Gothic New";
@@ -142,11 +163,11 @@ $root-font-size: 16;
 // ------------------------------------------------------------*/
 $basicTextColor: #414143;
 $mainColor: #ea7f24;
-$lightBlueColor: #A5B3E3;
-$yellowColor: #dfe862;
-$greenColor: #63BE72;
-$purpleColor: #994798;
-$orangeColor: #FC924E;
+$bgColor01: #eee8dd;
+$bgColor02: #faf8f4;
+$btnColor01: #1aae83;
+$btnColor02: #f67d61;
+$btnColor03: #7f6cdc;
 
 /// /* -------------------------------------------------------------
 //  余白レスポンシブ制御
@@ -157,56 +178,80 @@ $orangeColor: #FC924E;
   margin-top: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
 }
 @mixin mbMaxAndMin($minValue, $recommendation, $maxValue) {
-  margin-bottom: clamp(
-    $minValue,
-    calc(($recommendation / 1920 * 100)),
-    $maxValue
-  );
+  margin-bottom: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
 }
 @mixin mlMaxAndMin($minValue, $recommendation, $maxValue) {
-  margin-left: clamp(
-    $minValue,
-    calc(($recommendation / 1920 * 100)),
-    $maxValue
-  );
+  margin-left: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
 }
 
 @mixin mrMaxAndMin($minValue, $recommendation, $maxValue) {
-  margin-right: clamp(
-    $minValue,
-    calc(($recommendation / 1920 * 100)),
-    $maxValue
-  );
+  margin-right: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
 }
 
 @mixin ptMaxAndMin($minValue, $recommendation, $maxValue) {
-  padding-top: clamp(
-    $minValue,
-    calc(($recommendation / 1920 * 100)),
-    $maxValue
-  );
+  padding-top: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
 }
 
 @mixin pbMaxAndMin($minValue, $recommendation, $maxValue) {
-  padding-bottom: clamp(
-    $minValue,
-    calc(($recommendation / 1920 * 100)),
-    $maxValue
-  );
+  padding-bottom: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
 }
 
 @mixin plMaxAndMin($minValue, $recommendation, $maxValue) {
-  padding-left: clamp(
-    $minValue,
-    calc(($recommendation / 1920 * 100)),
-    $maxValue
-  );
+  padding-left: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
 }
 
 @mixin prMaxAndMin($minValue, $recommendation, $maxValue) {
-  padding-right: clamp(
-    $minValue,
-    calc(($recommendation / 1920 * 100)),
-    $maxValue
-  );
+  padding-right: clamp($minValue, calc(($recommendation / 1920 * 100)), $maxValue);
+}
+
+/// /* -------------------------------------------------------------
+//  余白レスポンシブ制御 wide対応
+// ------------------------------------------------------------*/
+
+@mixin mtwide($recommendation) {
+  margin-top: calc(($recommendation / 1920 * 100vw));
+}
+
+@mixin mrwide($recommendation) {
+  margin-right: calc(($recommendation / 1920 * 100vw));
+}
+
+@mixin mbwide($recommendation) {
+  margin-bottom: calc(($recommendation / 1920 * 100vw));
+}
+
+@mixin mlwide($recommendation) {
+  margin-left: calc(($recommendation / 1920 * 100vw));
+}
+
+@mixin ptwide($recommendation) {
+  padding-top: calc(($recommendation / 1920 * 100vw));
+}
+
+@mixin prwide($recommendation) {
+  padding-right: calc(($recommendation / 1920 * 100vw));
+}
+
+@mixin pbwide($recommendation) {
+  padding-bottom: calc(($recommendation / 1920 * 100vw));
+}
+
+@mixin plwide($recommendation) {
+  padding-left: calc(($recommendation / 1920 * 100vw));
+}
+
+@mixin marginWide($values...) {
+  $result: ();
+  @each $val in $values {
+    $result: list.append($result, calc(#{$val} / 1920 * 100vw));
+  }
+  margin: $result;
+}
+
+@mixin paddingWide($values...) {
+  $result: ();
+  @each $val in $values {
+    $result: list.append($result, calc(#{$val} / 1920 * 100vw));
+  }
+  padding: $result;
 }
