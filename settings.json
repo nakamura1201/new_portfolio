@@ -1,0 +1,14 @@
+{
+  "workbench.colorTheme": "Tokyo Night",
+  "json.schemaDownload.enable": true,
+  "emmet.triggerExpansionOnTab": true,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

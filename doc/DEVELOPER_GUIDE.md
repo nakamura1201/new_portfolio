@@ -16,6 +16,7 @@ start cmd /k npx browser-sync start --config bs-config.json
 使い方：エクスプローラーで `name-servers.bat` をダブルクリックするか、PowerShell から実行します。
 
 注意点：
+
 - `cd /d` の後は実プロジェクトのパスに合わせてください。
 - `browser-sync` をローカルで使う場合は `browser-sync` がインストールされている（または `npx` を使う）ことを確認してください。
 
@@ -24,16 +25,19 @@ start cmd /k npx browser-sync start --config bs-config.json
 （注）現環境の端末ログを取得しようとしましたが、実行中の端末 ID にアクセスできずログは取得できませんでした。以下はリポジトリの設定を元に推奨される確認項目です。
 
 - bs-config.json の `proxy` 設定
+
   - Docker で `node` と `php` を同時起動する場合、BrowserSync の proxy はコンテナ名（例: `php:80`）で問題ありません。
   - ローカル PC（非 Docker）で直接 `php -S` を使う場合は `localhost:8000` に変更してください。
 
 - `browser-sync` が見つからない／起動に失敗する
+
   - `Dockerfile.node` はコンテナ内で `npm install` を実行していますが、`package.json` に `browser-sync` が devDependencies に含まれていない場合、`npx browser-sync` は外部から取得を試みるため失敗することがあります。
   - 対処案：
     1. `package.json` の devDependencies に `browser-sync` を追加して `npm install` でローカルにインストールする（推奨）。
     2. あるいは `Dockerfile.node` に `RUN npm install -g browser-sync` を追加してグローバルにインストールする（あまり推奨しない）。
 
 - ボリュームマウントとファイル権限
+
   - Windows のパスや特殊文字（日本語）が含まれていると、Docker の bind mount がうまく動かないケースがあります。必要であればホストパスを短い ASCII パスに移動して試してください。
 
 - 失敗ログがある場合（取得方法）
@@ -59,6 +63,7 @@ start cmd /k npx browser-sync start --config bs-config.json
 - 内容：`push` / `pull_request`（`master` ブランチ）発生時に `npm ci` → `npm run build:static` を実行して成果物のビルドを行います。
 
 カスタマイズ例：
+
 - Node バージョンを固定したい場合は `node-version` を変更してください。
 - 将来的にユニットテストや lint を追加する場合はステップを追加してください。
 

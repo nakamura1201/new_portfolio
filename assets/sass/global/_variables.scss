@@ -6,12 +6,12 @@
 $mq-breakpoints: (
   "xs": 320px,
   "sm": 480px,
-  "mmd": 600px,
+  "smd": 600px,
   "md": 768px,
   "lg": 1024px,
   "xl": 1200px,
-  "xxl": 1500px,
-  "fhd": 1921px,
+  "2xl": 1500px,
+  "3xl": 1921px,
 ) !default;
 @mixin mq($breakpoint: md, $rule: min) {
   $breakpoint: map.get($mq-breakpoints, $breakpoint);
