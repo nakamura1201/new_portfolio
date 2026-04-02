@@ -1,0 +1,3 @@
+interface:
+  display_name: "探索フロー統括"
+  short_description: "Step1-7を順番管理するオーケストレーター"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "追加 Go/No-Go判定"
+  short_description: "継続/ピボット/中止の意思決定"

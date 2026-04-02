@@ -1,0 +1,3 @@
+interface:
+  display_name: "要件定義"
+  short_description: "要件定義ドキュメントの作成と整理を支援"
