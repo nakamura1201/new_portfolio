@@ -1,0 +1,3 @@
+interface:
+  display_name: "実装 UI受け取り"
+  short_description: "外部AIのUI案を検収してタスク化"

@@ -1,6 +1,6 @@
 ---
 name: requirements-definition
-description: Create and maintain requirements-definition documents for this project in `doc/03_requirements/` following `doc/GUIDELINES.md`. Use when requests involve functional requirements, non-functional requirements, requirement prioritization, or quality checks for requirement documents.
+description: Create and maintain requirements-definition documents for this project in `doc/02_requirements/` following `doc/GUIDELINES.md`. Use when requests involve functional requirements, non-functional requirements, requirement prioritization, or quality checks for requirement documents.
 ---
 
 # Requirements Definition
@@ -17,15 +17,15 @@ Use the project overview and glossary before writing or revising requirement fil
 - `doc/01_overview/project-brief.md`
 - `doc/01_overview/scope.md`
 - `doc/01_overview/glossary.md`
-2. Create or update output files under `doc/03_requirements/`.
+2. Create or update output files under `doc/02_requirements/`.
 3. Keep requirement IDs consistent and unique.
 4. Run a self-review checklist before finalizing.
 
 ## Output Files
 
-- `doc/03_requirements/functional-requirements.md`
-- `doc/03_requirements/non-functional-requirements.md`
-- `doc/03_requirements/priority-matrix.md`
+- `doc/02_requirements/functional-requirements.md`
+- `doc/02_requirements/non-functional-requirements.md`
+- `doc/02_requirements/priority-matrix.md`
 
 ## Functional Requirements
 

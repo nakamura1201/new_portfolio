@@ -6,9 +6,9 @@ description: MVPを使った学習と検証を行うスキル。プロトタイ�
 # Step 6 MVP学習と検証
 
 ## 出力
-- `doc/04_spec/prototype-plan.md`
-- `doc/04_spec/usability-test-results.md`
-- `doc/04_spec/learning-log.md`
+- `doc/05_marketing/01_product_marketing/step-10-MVP学習/プロトタイプ計画.md`
+- `doc/05_marketing/01_product_marketing/step-10-MVP学習/ユーザビリティテスト結果.md`
+- `doc/05_marketing/01_product_marketing/step-10-MVP学習/学習ログ.md`
 
 ## 手順
 1. 実験用プロトタイプ計画を作成する。

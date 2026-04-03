@@ -6,8 +6,8 @@ description: 最小価値（MVP）を定義するスキル。ユーザースト�
 # Step 5 MVP定義
 
 ## 出力
-- `doc/04_spec/user-story-map.md`
-- `doc/04_spec/mvp-core-features.md`
+- `doc/05_marketing/01_product_marketing/step-09-MVP定義/ユーザーストーリーマップ.md`
+- `doc/05_marketing/01_product_marketing/step-09-MVP定義/MVPコア機能.md`
 
 ## 手順
 1. ユーザーストーリーマップを作成する。

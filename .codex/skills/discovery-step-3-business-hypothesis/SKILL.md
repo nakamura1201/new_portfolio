@@ -6,8 +6,8 @@ description: ビジネスモデル仮説を構築するスキル。リーンキ�
 # Step 3 ビジネスモデル仮説
 
 ## 出力
-- `doc/02_research/lean-canvas.md`
-- `doc/02_research/lethal-hypotheses.md`
+- `doc/05_marketing/01_product_marketing/step-05-事業仮説/リーンキャンバス.md`
+- `doc/05_marketing/01_product_marketing/step-05-事業仮説/致命仮説.md`
 
 ## 手順
 1. リーンキャンバスを埋める。

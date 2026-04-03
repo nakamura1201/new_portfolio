@@ -6,8 +6,9 @@ description: 製品要求仕様書（PRD）を作成するスキル。背景と�
 # Step 7 PRD作成
 
 ## 出力
-- `doc/04_spec/製品要求仕様書-PRD.md`
-- `doc/03_requirements/要件定義.md`
+- `doc/05_marketing/01_product_marketing/step-14-PRD作成/PRDドラフト.md`
+- `doc/03_spec/text.md`
+- `doc/02_requirements/text.md`
 
 ## 手順
 1. 背景と目的を検証結果ベースで記述する。

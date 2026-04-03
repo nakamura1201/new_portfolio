@@ -6,9 +6,9 @@ description: 根本原因とN=1ターゲットを定義するスキル。5 Whys�
 # Step 2 深掘りとN=1定義
 
 ## 出力
-- `doc/02_research/root-cause-5whys.md`
-- `doc/02_research/n1-job-scenario.md`
-- `doc/02_research/current-alternatives.md`
+- `doc/05_marketing/01_product_marketing/step-02-深掘りとN1定義/なぜなぜ分析.md`
+- `doc/05_marketing/01_product_marketing/step-02-深掘りとN1定義/N1状況定義.md`
+- `doc/05_marketing/01_product_marketing/step-02-深掘りとN1定義/代替手段調査.md`
 
 ## 手順
 1. 5 Whys で根本原因を特定する。

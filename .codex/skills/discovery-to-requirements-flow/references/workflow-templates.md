@@ -1,6 +1,6 @@
 # Discovery to Requirements テンプレート
 
-## 1) ブレスト: `doc/02_research/brainstorm.md`
+## 1) ブレスト: `doc/05_marketing/01_product_marketing/step-01-発散と構造化/ブレインストーミング.md`
 
 ```markdown
 # ブレスト結果
@@ -18,7 +18,7 @@
 - [気づき]
 ```
 
-## 2) KJ法: `doc/02_research/kj-clustering.md`
+## 2) KJ法: `doc/05_marketing/01_product_marketing/step-01-発散と構造化/KJ法クラスタリング.md`
 
 ```markdown
 # KJ法クラスタリング
@@ -42,7 +42,7 @@
 - [洞察2]
 ```
 
-## 3) パレート分析: `doc/02_research/pareto-analysis.md`
+## 3) パレート分析: `doc/05_marketing/01_product_marketing/step-01-発散と構造化/パレート分析.md`
 
 ```markdown
 # パレート分析
@@ -59,7 +59,7 @@
 - [対象2]
 ```
 
-## 4) 市場調査: `doc/02_research/market-research.md`
+## 4) 市場調査: `doc/05_marketing/01_product_marketing/step-06-市場リサーチ/市場調査.md`
 
 ```markdown
 # 市場調査
@@ -79,7 +79,7 @@
 - [リスク1]
 ```
 
-## 5) 仕様書: `doc/04_spec/text.md`
+## 5) 仕様書: `doc/03_spec/text.md`
 
 ```markdown
 # 仕様書
@@ -100,7 +100,7 @@
 - [例外1]
 ```
 
-## 6) 要件定義: `doc/03_requirements/text.md`
+## 6) 要件定義: `doc/02_requirements/text.md`
 
 ```markdown
 # 要件定義

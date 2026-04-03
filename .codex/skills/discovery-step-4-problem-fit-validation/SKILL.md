@@ -6,9 +6,9 @@ description: 課題検証（プロブレムフィット）を行うスキル。�
 # Step 4 課題検証
 
 ## 出力
-- `doc/02_research/depth-interviews.md`
-- `doc/02_research/solution-reaction-log.md`
-- `doc/02_research/pivot-or-persevere.md`
+- `doc/05_marketing/01_product_marketing/step-08-課題検証/デプスインタビュー.md`
+- `doc/05_marketing/01_product_marketing/step-08-課題検証/ソリューション反応ログ.md`
+- `doc/05_marketing/01_product_marketing/step-08-課題検証/ピボット判断.md`
 
 ## 手順
 1. N=1対象へのデプスインタビュー結果を整理する。

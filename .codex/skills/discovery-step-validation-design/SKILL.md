@@ -6,8 +6,8 @@ description: 課題検証の実験計画を設計するスキル。インタビ�
 # 追加Step 検証設計
 
 ## 出力
-- `doc/02_research/検証計画.md`
-- `doc/02_research/インタビュー質問票.md`
+- `doc/05_marketing/01_product_marketing/step-07-検証設計/検証計画.md`
+- `doc/05_marketing/01_product_marketing/step-07-検証設計/インタビュー質問票.md`
 
 ## 手順
 1. 検証したい仮説を優先順で並べる。

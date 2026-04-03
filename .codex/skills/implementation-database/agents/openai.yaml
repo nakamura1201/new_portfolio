@@ -1,0 +1,3 @@
+interface:
+  display_name: "実装 DB"
+  short_description: "スキーマとマイグレーションを実装"

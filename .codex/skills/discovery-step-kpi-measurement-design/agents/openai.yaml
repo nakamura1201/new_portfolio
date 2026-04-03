@@ -1,0 +1,3 @@
+interface:
+  display_name: "追加 KPI計測設計"
+  short_description: "KPIとイベント計測を定義"

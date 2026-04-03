@@ -1,0 +1,3 @@
+interface:
+  display_name: "追加 リリース計画"
+  short_description: "PRD後の実行計画を定義"

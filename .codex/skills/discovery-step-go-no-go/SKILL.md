@@ -6,7 +6,7 @@ description: 検証結果を基にGo/No-Go判定を行うスキル。継続、�
 # 追加Step Go/No-Go判定
 
 ## 出力
-- `doc/04_spec/Go-NoGo判定.md`
+- `doc/05_marketing/01_product_marketing/step-13-GoNoGo判定/Go-NoGo判定.md`
 
 ## 手順
 1. 主要学習結果とKPI達成状況を整理する。

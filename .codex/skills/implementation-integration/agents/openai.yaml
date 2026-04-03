@@ -1,0 +1,3 @@
+interface:
+  display_name: "実装 結合"
+  short_description: "FE/API/DBの結合確認"

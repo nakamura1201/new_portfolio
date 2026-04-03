@@ -6,9 +6,9 @@ description: 発散と構造化を実行するスキル。ブレインストー�
 # Step 1 発散と構造化
 
 ## 出力
-- `doc/02_research/ブレインストーミング.md`
-- `doc/02_research/KJ法クラスタリング.md`
-- `doc/02_research/パレート分析.md`
+- `doc/05_marketing/01_product_marketing/step-01-発散と構造化/ブレインストーミング.md`
+- `doc/05_marketing/01_product_marketing/step-01-発散と構造化/KJ法クラスタリング.md`
+- `doc/05_marketing/01_product_marketing/step-01-発散と構造化/パレート分析.md`
 
 ## 手順
 1. ブレストで課題候補と解決案候補を全量列挙する。

@@ -1,6 +1,6 @@
 ---
 name: discovery-to-requirements-flow
-description: [TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]
+description: Discoveryの初期検討から要件化までを進める補助スキル。テンプレートを使って調査結果や仕様化のたたき台を整理したいときに使う。
 ---
 
 # Discovery To Requirements Flow

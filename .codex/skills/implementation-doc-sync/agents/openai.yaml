@@ -1,0 +1,3 @@
+interface:
+  display_name: "実装 ドキュメント同期"
+  short_description: "実装差分を要件/仕様へ反映"
