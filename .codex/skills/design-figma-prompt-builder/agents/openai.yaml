@@ -1,0 +1,3 @@
+interface:
+  display_name: "Figma依頼プロンプト作成"
+  short_description: "docからFigma依頼文を生成"

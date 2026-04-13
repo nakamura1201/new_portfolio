@@ -1,79 +1,78 @@
 <!DOCTYPE html>
-<?php $title = ""; ?>
-<?php $description = ""; ?>
-<?php $ogType = ""; ?>
+<?php
+include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/projects.php');
 
+$slug = isset($_GET['slug']) ? (string)$_GET['slug'] : '';
+$project = findProjectBySlug($projects, $slug);
+
+if ($project === null) {
+    http_response_code(404);
+    $title = '実績が見つかりません';
+    $description = '指定された実績は存在しません。';
+} else {
+    $title = $project['title'] . ' | 実績詳細';
+    $description = $project['summary'];
+}
+
+$ogType = 'article';
+?>
 <html lang="ja">
 
 <head>
-  <title><?php echo "$title" ?></title>
+  <title><?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); ?></title>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/head.php'); ?>
 </head>
 
-<body class="home">
-  <header class="l-header">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/header.php'); ?>
-  </header>
-  <main class="c-main -static">
+<body>
+  <div class="c-loading" aria-hidden="true"></div>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/header.php'); ?>
 
-
-    <section class="c-section">
+  <main class="p-portfolio-main">
+    <section class="p-portfolio-section">
       <div class="c-content">
-        <div class="c-content__inner">
-          <div class="c-mt-detail">
-            <h1 class="c-under-headLine04">製品詳細CMS パーツ一覧</h1>
+        <div class="c-content__inner p-detail">
+          <?php if ($project === null): ?>
+          <h1 class="p-section-title">実績が見つかりません</h1>
+          <p>一覧ページから別の実績を選択してください。</p>
+          <a class="p-cta-btn" href="/index.php#projects">実績一覧へ戻る</a>
+          <?php else: ?>
+          <h1 class="p-section-title"><?php echo htmlspecialchars($project['title'], ENT_QUOTES, 'UTF-8'); ?></h1>
+          <p class="p-detail__summary"><?php echo htmlspecialchars($project['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
+
+          <dl class="p-detail__list">
+            <div>
+              <dt>課題</dt>
+              <dd><?php echo htmlspecialchars($project['challenge'], ENT_QUOTES, 'UTF-8'); ?></dd>
+            </div>
+            <div>
+              <dt>担当範囲</dt>
+              <dd><?php echo htmlspecialchars($project['scope'], ENT_QUOTES, 'UTF-8'); ?></dd>
+            </div>
+            <div>
+              <dt>実装内容</dt>
+              <dd><?php echo htmlspecialchars($project['implementation'], ENT_QUOTES, 'UTF-8'); ?></dd>
+            </div>
+            <div>
+              <dt>成果</dt>
+              <dd><?php echo htmlspecialchars($project['outcome'], ENT_QUOTES, 'UTF-8'); ?></dd>
+            </div>
+            <div>
+              <dt>使用技術</dt>
+              <dd><?php echo htmlspecialchars(implode(' / ', $project['technologies']), ENT_QUOTES, 'UTF-8'); ?></dd>
+            </div>
+          </dl>
+
+          <div class="p-detail__actions">
+            <a class="p-cta-btn" href="/index.php#contact">この内容で相談する</a>
+            <a class="p-cta-btn -line" href="/index.php#projects">実績一覧に戻る</a>
           </div>
-          <div class="c-mt-entryBody">
-            <h1>H1が入ります</h1>
-            <h2>H2が入ります</h2>
-            <h3>H3が入ります</h3>
-            <h4>H4が入ります</h4>
-            <ul>
-              <li>リストが入ります</li>
-              <li>リストが入ります</li>
-              <li>リストが入ります</li>
-            </ul>
-            <ol>
-              <li>リストが入ります</li>
-              <li>リストが入ります</li>
-              <li>リストが入ります</li>
-            </ol>
-            <a href="">テキストリンクが入ります。</a>
-            <p>テキストが入ります。この文章はダミーです。テキストが入ります。この文章はダミーです。テキストが入ります。この文章はダミーです。
-              テキストが入ります。この文章はダミーです。テキストが入ります。この文章はダミーです。テキストが入ります。この文章はダミーです。
-              テキストが入ります。この文章はダミーです。テキストが入ります。この文章はダミーです。テキストが入ります。この文章はダミーです。</p>
-            <table>
-              <tbody>
-                <tr>
-                  <th>項目名1</th>
-                  <td>テキストが入りますテキストが入ります。</td>
-                </tr>
-                <tr>
-                  <th>項目名2</th>
-                  <td>テキストが入りますテキストが入ります。</td>
-                </tr>
-              </tbody>
-            </table>
-            <img src="/assets/image/common/dummy.jpg" alt="">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/PgLXkfLcBUM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-          <!-- /.c-mt-entryBody -->
+          <?php endif; ?>
         </div>
       </div>
-      </div>
     </section>
-
-
-
-
-
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/footer-contact.php'); ?>
-
   </main>
-  <footer>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/footer.php'); ?>
-  </footer>
 
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/footer.php'); ?>
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/assets/inc/footer-script.php'); ?>
 </body>
 
