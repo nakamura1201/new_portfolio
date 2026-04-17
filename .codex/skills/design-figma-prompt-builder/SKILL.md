@@ -12,6 +12,8 @@ description: doc配下の要件・仕様・マーケ資料を読み取り、Figm
 - `doc/01_overview/glossary.md`
 - `doc/02_requirements/text.md`
 - `doc/03_spec/text.md`
+- `doc/04_design/figma-handoff/design-visual-direction.md`（存在する場合）
+- `doc/04_design/figma-handoff/design-motion-direction.md`（存在する場合）
 - 必要に応じて `doc/05_marketing/01_product_marketing/` の関連ステップ資料
 
 ## 出力
@@ -27,6 +29,8 @@ description: doc配下の要件・仕様・マーケ資料を読み取り、Figm
 - 画面一覧
 - 必須コンポーネント
 - トーン&マナー
+- デザインテイスト（世界観、配色、タイポ方針）
+- モーション方針（速度、イージング、適用範囲、禁止演出）
 - レスポンシブ要件
 - アクセシビリティ要件
 - 非対象（Non-goals）

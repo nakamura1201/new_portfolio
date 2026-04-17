@@ -6,15 +6,14 @@ description: 実装フェーズを統括するオーケストレータースキ�
 # Implementation Orchestrator
 
 ## 事前必須フロー（UI構築前）
-
 UI構築に入る前に、以下を必ず実行すること。
-
-1. `design-figma-prompt-builder` を使い、Figma 制作依頼プロンプトを作成する。
-2. Antigravity 側の `figma_design_import` を使い、Figma デザインを取り込んで `doc/04_design/DESIGN.md` を作成・更新する。
-3. `implementation-ui-intake` と `implementation-frontend` の開始前に、最新の `doc/04_design/DESIGN.md` を参照していることを確認する。
+1. `design-visual-direction-brief` でデザインテイスト方針を定義する。
+2. `design-motion-direction-brief` でアニメーション方針を定義する。
+3. `design-figma-prompt-builder` を使い、Figma 制作依頼プロンプトを作成する。
+4. `figma-design-import` を使い、Figma デザインを取り込んで `doc/04_design/DESIGN.md` を作成・更新する。
+5. `implementation-ui-intake` と `implementation-frontend` の開始前に、最新の `doc/04_design/DESIGN.md` を参照していることを確認する。
 
 ## 実行順序
-
 1. `implementation-ui-intake`
 2. `implementation-database`
 3. `implementation-backend-api`
@@ -24,14 +23,13 @@ UI構築に入る前に、以下を必ず実行すること。
 7. `implementation-doc-sync`
 
 ## 統括ルール
-
 - UI関連タスク（`implementation-ui-intake` / `implementation-frontend`）は、`doc/04_design/DESIGN.md` の参照完了を開始条件とする。
+- Figma依頼前に `doc/04_design/figma-handoff/design-visual-direction.md` と `doc/04_design/figma-handoff/design-motion-direction.md` を準備する。
 - 各ステップで完了条件を満たすまで次へ進まない。
 - 契約不一致が出た場合は `implementation-backend-api` または `implementation-frontend` に戻す。
 - 最終的に `doc/02_requirements/text.md` と `doc/03_spec/text.md` と `doc/04_design/DESIGN.md` を正本として同期する。
 
 ## 最終成果物
-
 - 実装コード一式
 - `doc/03_spec/implementation/` 配下の実装ログ
 - `doc/02_requirements/change-management/変更履歴.md`

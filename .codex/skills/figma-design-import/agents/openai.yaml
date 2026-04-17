@@ -1,0 +1,3 @@
+interface:
+  display_name: "Figma Design Import"
+  short_description: "FigmaからDESIGN.mdへ取り込み"

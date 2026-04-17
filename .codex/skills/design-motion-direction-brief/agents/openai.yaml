@@ -1,0 +1,3 @@
+interface:
+  display_name: "Motion Direction Brief"
+  short_description: "アニメーション方針を先に定義する"
