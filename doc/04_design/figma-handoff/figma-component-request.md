@@ -1,6 +1,10 @@
 # Figma Component Request
 
-最終更新: 2026-04-13
+最終更新: 2026-04-20
+
+## 参照必須ドキュメント
+- `doc/04_design/figma-handoff/design-visual-direction.md`
+- `doc/04_design/figma-handoff/design-motion-direction.md`
 
 ## 依頼対象コンポーネント
 1. `cmp/nav/header`
