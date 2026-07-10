@@ -4,12 +4,12 @@
       <a class="l-header__brand" href="/index.php">Portfolio</a>
       <nav aria-label="グローバルナビゲーション">
         <ul class="l-header__navList">
-          <li><a href="/index.php#projects">実績</a></li>
+          <li><a href="/index.php#top">トップ</a></li>
+          <li><a href="/index.php#projects">実績一覧</a></li>
           <li><a href="/index.php#skills">スキル</a></li>
-          <li><a href="/index.php#contact">問い合わせ</a></li>
         </ul>
       </nav>
-      <a class="l-header__cta" href="/index.php#contact">相談する</a>
+      <a class="l-header__cta" href="/index.php#contact">お問い合わせ</a>
     </div>
   </div>
 </div>
